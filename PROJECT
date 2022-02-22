@@ -1,0 +1,10 @@
+domain: jiffykube.io
+repo: jiffykube.io/jiffykube
+resources:
+- group: base
+  kind: Job
+  version: v1
+- group: base
+  kind: App
+  version: v1
+version: "2"

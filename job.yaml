@@ -1,0 +1,6 @@
+apiVersion: base.jiffykube.io/v1
+kind: Job
+metadata:
+  name: myjob
+spec:
+  foo: poobar

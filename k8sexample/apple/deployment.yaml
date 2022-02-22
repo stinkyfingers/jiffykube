@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: apple-deployment
+  labels:
+    app: apple
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: apple
+  template:
+    metadata:
+      labels:
+        app: apple
+    spec:
+      containers:
+        - name: apple
+          image: gcr.io/kubernetes-312803/sample-go-app
+          ports:
+            - containerPort: 8888

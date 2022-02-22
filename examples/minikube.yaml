@@ -1,0 +1,15 @@
+apiVersion: base.jiffykube.io/v1
+kind: App
+metadata:
+  name: apple
+spec:
+  name: apple
+  replicas: 2
+  containers:
+    - name: sample
+      image: gcr.io/kubernetes-312803/sample-go-app
+      ports:
+        containerPort: 8888
+  rules:
+    - path: "/"
+  ingressClass: "default"

@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: banana-deployment
+  labels:
+    app: banana
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: banana
+  template:
+    metadata:
+      labels:
+        app: banana
+    spec:
+      containers:
+        - name: banana
+          image: gcr.io/kubernetes-312803/sample-go-app
+          ports:
+            - containerPort: 8888

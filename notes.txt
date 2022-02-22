@@ -1,0 +1,21 @@
+
+MINIKUBE
+https://kubernetes.io/docs/tasks/access-application-cluster/ingress-minikube/
+- enable nginx ingress controller:
+    minikube addons enable ingress -p <cluster>
+- k apply -f examples/minikube.yaml
+- curl $(minikube ip -p <cluster>)
+
+GKE
+https://medium.com/google-cloud/deploying-service-or-ingress-on-gke-59a49b134e3b
+- assure gke ingress controller is enabled (is on by default)
+- k apply -f examples/gce.yaml
+
+TODO
+GKE
+- static address - https://devopscube.com/setup-ingress-gke-ingress-controller/
+    - gcloud compute addresses create ingress-webapps --global (add to annotations)
+
+AWS
+- https://docs.aws.amazon.com/eks/latest/userguide/aws-load-balancer-controller.html
+    - enable ALB
